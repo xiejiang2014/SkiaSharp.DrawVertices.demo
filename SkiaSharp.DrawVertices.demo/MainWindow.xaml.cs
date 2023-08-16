@@ -78,10 +78,7 @@ namespace SkiaSharp.DrawVertices.demo
             canvas.Clear(SKColors.White);
 
             //=================================
-
-            canvas.Clear(SKColors.White);
-
-
+            
             //三个顶点
             var vertices = new[]
                            {
