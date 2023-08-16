@@ -105,13 +105,13 @@ namespace SkiaSharp.DrawVertices.demo
             using var bitmap        = SKBitmap.Decode(stream);
 
             // 创建纹理着色器 SkShader，并使用 SkShader.CreateBitmapShader 方法绑定位图
-            var shader = SKShader.CreateBitmap(bitmap, SKShaderTileMode.Clamp, SKShaderTileMode.Clamp);
+            using var shader = SKShader.CreateBitmap(bitmap, SKShaderTileMode.Clamp, SKShaderTileMode.Clamp);
 
-            var paint = new SKPaint
-                        {
-                            IsAntialias = true,
-                            Shader      = shader,
-                        };
+            using var paint = new SKPaint
+                              {
+                                  IsAntialias = true,
+                                  Shader      = shader,
+                              };
 
 
             canvas.DrawVertices(SKVertexMode.Triangles, //如何解释顶点数组  Triangles=三角形列表
